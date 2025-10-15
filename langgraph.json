@@ -1,0 +1,13 @@
+{
+    "dependencies":[
+    "langchain",
+    "langchain-google-vertexai",
+    "langgraph",
+    "langgraph-cli[inmem]"
+    ],
+  "graphs": {
+ 
+      "agentic": "./src/HybridRetrievalWebFallback/core/hybrid_retrieval_with_web_fallback.py:graph"
+    }
+  }
+
