@@ -24,36 +24,17 @@ VectorDB Lookup ────► Grading ──(low grade)──► Web Search (T
 
 You’ll likely need these nodes:
 
-    retrieve — query vector store (Chroma)
+    1. retrieve — query vector store (Chroma)
 
-    grade— use an LLM (or scoring heuristic) to judge relevance / confidence.
+    2. grade— use an LLM (or scoring heuristic) to judge relevance / confidence.
 
-    route — decide whether to go to web or build answer directly.
+    3. route — decide whether to go to web or build answer directly.
 
-    web_search— fallback to Tavily API if docs are missing or low quality.
+    4. web_search— fallback to Tavily API if docs are missing or low quality.
 
-    answer — final synthesis (e.g., RAG answer generation with context).
-
-
-2. VectorDB Retrieval Node
-
-def retrieve_from_vectordb(state):
-    query = state["query"]
-    docs = vectordb.similarity_search(query, k=5)
-    return {"docs": docs}
-
-3. Grading Node
-
-    You can use an LLM to grade each doc for relevance, or a simple similarity threshold.
+    5. answer — final synthesis (e.g., RAG answer generation with context).
 
 
-4. Routing Logic
-
-    If the grade is too low or no docs found → go to Tavily search.
-
-5. Tavily Search Node
-
-6. Answer Builing Node
 
 
 ⚡ Additional Pro Tips
