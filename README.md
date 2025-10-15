@@ -1,28 +1,13 @@
 
 
-User Query
-
-   │
-   ▼
-
-VectorDB Lookup ────► Grading ──(low grade)──► Web Search (Tavily)
-
-   │                          │
-
-   │(good grade)              ▼
-
-   └──────────────►  build_answer (LLM)
-
-
 
 ![alt text](img/Langgraph.png)
 
 
 
 🧭 Step-by-Step Design (LangGraph)
-1. Nodes Definition
 
-You’ll likely need these nodes:
+* Nodes Definition
 
     1. retrieve — query vector store (Chroma)
 
@@ -33,8 +18,6 @@ You’ll likely need these nodes:
     4. web_search— fallback to Tavily API if docs are missing or low quality.
 
     5. answer — final synthesis (e.g., RAG answer generation with context).
-
-
 
 
 ⚡ Additional Pro Tips
